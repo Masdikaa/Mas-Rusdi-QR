@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".fragments.LoginFragment">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/input_login_background"
+        android:paddingStart="20dp"
+        android:paddingEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_input">
+
+        <TextView
+            android:id="@+id/login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/lorin_regular"
+            android:text="Login"
+            android:textAlignment="center"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textSize="38sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/title_line"
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/login_title"
+            android:layout_marginTop="6dp"
+            android:background="?attr/colorOnPrimaryContainer" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_username"
+            style="?attr/textInputFilledStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_line"
+            android:layout_marginTop="35dp"
+            android:hint="Username"
+            android:textColorHint="?attr/colorPrimaryContainer"
+            app:boxBackgroundColor="?attr/colorOnPrimaryContainer"
+            app:boxStrokeColor="?attr/colorOnTertiaryContainer"
+            app:boxStrokeWidthFocused="3dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="#12131A"
+
+            app:hintTextColor="?attr/colorPrimaryContainer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="?attr/colorPrimaryContainer"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_password"
+            style="?attr/textInputFilledStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_layout_username"
+            android:layout_marginTop="20dp"
+            android:hint="Password"
+            android:textColorHint="?attr/colorPrimaryContainer"
+            app:boxBackgroundColor="?attr/colorOnPrimaryContainer"
+            app:boxStrokeColor="?attr/colorOnTertiaryContainer"
+            app:boxStrokeWidthFocused="3dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="#12131A"
+            app:hintTextColor="?attr/colorPrimaryContainer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:inputType="textPassword"
+                android:textColor="?attr/colorPrimaryContainer"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extended_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_below="@id/input_layout_password"
+            android:layout_alignStart="@id/input_layout_password"
+            android:layout_alignEnd="@id/input_layout_password"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="?attr/colorOnPrimarySurface"
+            android:fontFamily="@font/lorin_regular"
+            android:text="Go to Apps"
+            android:textColor="?attr/colorPrimaryContainer"
+            android:textSize="18dp"
+            app:cornerRadius="0dp" />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
