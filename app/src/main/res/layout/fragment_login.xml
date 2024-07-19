@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface"
+    android:background="?attr/colorSurfaceContainer"
     tools:context=".fragments.LoginFragment">
 
     <RelativeLayout
@@ -26,7 +26,7 @@
             android:fontFamily="@font/lorin_regular"
             android:text="Login"
             android:textAlignment="center"
-            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textColor="?attr/colorOnPrimaryFixedVariant"
             android:textSize="38sp"
             android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
             android:layout_height="1dp"
             android:layout_below="@id/login_title"
             android:layout_marginTop="6dp"
-            android:background="?attr/colorOnPrimaryContainer" />
+            android:background="?attr/colorOnPrimaryFixedVariant" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_username"
@@ -47,12 +47,11 @@
             android:layout_marginTop="35dp"
             android:hint="Username"
             android:textColorHint="?attr/colorPrimaryContainer"
-            app:boxBackgroundColor="?attr/colorOnPrimaryContainer"
+            app:boxBackgroundColor="?attr/colorPrimaryFixedDim"
             app:boxStrokeColor="?attr/colorOnTertiaryContainer"
             app:boxStrokeWidthFocused="3dp"
             app:endIconMode="clear_text"
             app:endIconTint="#12131A"
-
             app:hintTextColor="?attr/colorPrimaryContainer">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -74,7 +73,7 @@
             android:layout_marginTop="20dp"
             android:hint="Password"
             android:textColorHint="?attr/colorPrimaryContainer"
-            app:boxBackgroundColor="?attr/colorOnPrimaryContainer"
+            app:boxBackgroundColor="?attr/colorPrimaryFixedDim"
             app:boxStrokeColor="?attr/colorOnTertiaryContainer"
             app:boxStrokeWidthFocused="3dp"
             app:endIconMode="password_toggle"
@@ -92,20 +91,91 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/extended_fab"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="50dp"
             android:layout_below="@id/input_layout_password"
             android:layout_alignStart="@id/input_layout_password"
             android:layout_alignEnd="@id/input_layout_password"
             android:layout_marginTop="20dp"
-            android:backgroundTint="?attr/colorOnPrimarySurface"
+            android:backgroundTint="?attr/colorOnPrimaryFixedVariant"
             android:fontFamily="@font/lorin_regular"
             android:text="Go to Apps"
-            android:textColor="?attr/colorPrimaryContainer"
+            android:textColor="?attr/colorPrimaryFixed"
             android:textSize="18dp"
-            app:cornerRadius="0dp" />
+            app:cornerRadius="8dp" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_button"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/lorin_regular"
+            android:text="Don't have any account ?"
+            android:textColor="?attr/colorOnPrimaryFixedVariant"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_google_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lorin_regular"
+            android:text="Continue with "
+            android:textColor="?attr/colorOnPrimaryFixedVariant"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/google_login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_below="@id/tv_title"
+            android:layout_alignTop="@id/tv_google_title"
+            android:layout_alignBottom="@id/tv_google_title"
+            android:layout_centerHorizontal="true"
+            android:layout_toEndOf="@id/tv_google_title"
+            android:background="@drawable/google_login_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="2dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/google_icon"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/or_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/google_login_button"
+            android:fontFamily="@font/lorin_regular"
+            android:text=" or "
+            android:textColor="?attr/colorOnPrimaryFixedVariant"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/sign_up_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/or_dialog"
+            android:fontFamily="@font/lorin_regular"
+            android:text="Sign Up"
+            android:textColor="?attr/colorOnPrimaryFixedVariant"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

@@ -1,6 +1,8 @@
 package com.masdika.masrusdiqr.fragments
 
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,8 +20,12 @@ class LoginFragment : Fragment() {
     ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
+        val textSignUp = "Sign Up"
+        val spannableString = SpannableString(textSignUp)
+        spannableString.setSpan(UnderlineSpan(), 0, textSignUp.length, 0)
+        binding.signUpButton.text = spannableString
+
         return binding.root
-//        return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
 }
